@@ -1,0 +1,17 @@
+export const skills = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "shadcn/ui",
+  "Prisma",
+  "Drizzle",
+  "Tailwind",
+  "Postgres",
+  "Node.js",
+  "Express.js",
+  "Python",
+  "Java",
+  "Full Stack Development",
+  "CI/CD",
+  "Git",
+];

@@ -1,26 +1,13 @@
 import Image from "next/image";
 import { FloatingDock } from "~/components/floating-dock";
 import { Badge } from "~/components/ui/badge";
+import { WorkExperienceCard } from "~/components/work-experience-card";
+
+import { skills } from "~/data/skills";
+import { workExperiences } from "~/data/work-experiences";
+import { cn } from "~/lib/utils";
 
 export default function Home() {
-  const skills = [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "shadcn/ui",
-    "Prisma",
-    "Drizzle",
-    "Tailwind",
-    "Postgres",
-    "Node.js",
-    "Express.js",
-    "Python",
-    "Java",
-    "Full Stack Development",
-    "CI/CD",
-    "Git",
-  ];
-
   return (
     <div className="flex flex-col items-center justify-items-center min-h-[100dvh] p-8 pb-20 gap-8 sm:p-20 max-w-5xl mx-auto ">
       {/* TOP SECTION */}
@@ -72,6 +59,37 @@ export default function Home() {
             <Badge key={`skills-badge-${skill}`}>{skill}</Badge>
           ))}
         </div>
+      </div>
+
+      {/* WORK EXPERIENCE */}
+      <div className="w-full flex flex-col gap-2">
+        <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
+          Work Experience
+        </h3>
+        <ul className="divide-y divide-solid ml-4">
+          {workExperiences.map((experience, index) => {
+            let shouldHideBorder = false;
+
+            if (
+              index + 1 !== workExperiences.length - 1 &&
+              workExperiences[index + 1]?.isSequential
+            ) {
+              shouldHideBorder = true;
+            }
+
+            return (
+              <li
+                key={`work-experience-${index}-${experience.company}`}
+                className={cn(
+                  "not-first:pt-1",
+                  shouldHideBorder && "border-b-0"
+                )}
+              >
+                <WorkExperienceCard {...experience} />
+              </li>
+            );
+          })}
+        </ul>
       </div>
       <FloatingDock />
     </div>
