@@ -45,7 +45,7 @@ export function WorkExperienceCard({
               )}
             >
               {isSequential ? (
-                <span className="size-2 bg-border rounded-full block" />
+                <span className="size-2 bg-border dark:bg-muted-foreground rounded-full block" />
               ) : (
                 <Image
                   src={companyImage}
@@ -59,8 +59,11 @@ export function WorkExperienceCard({
             <div className="ml-10 flex flex-col min-h-full justify-start align-top">
               <p className="text-lg font-bold leading-5">{title}</p>
               <p className="text-md">{company}</p>
+              <p className="text-sm text-muted-foreground flex min-[850px]:hidden">
+                {startDate} - {endDate}
+              </p>
             </div>
-            <div className="grow-1 justify-self-end text-sm text-muted-foreground flex-col align-top h-full text-right hidden min-[550px]:flex">
+            <div className="grow-1 justify-self-end text-sm text-muted-foreground flex-col align-top h-full text-right hidden min-[850px]:flex">
               <span>
                 {startDate} - {endDate}
               </span>
@@ -70,13 +73,18 @@ export function WorkExperienceCard({
         <AccordionContent className="ml-10 pb-2">
           {description}
           {skills && (
-            <div className="flex flex-row gap-2 items-center pt-1">
+            <div className="flex flex-col gap-2 items-start pt-1">
               <span className="text-lg font-bold">Skills:</span>
-              {skills.map((skill) => (
-                <Badge key={`${company}-skills-badge-${skill}`} className="h-5">
-                  {skill}
-                </Badge>
-              ))}
+              <div className="flex gap-1">
+                {skills.map((skill) => (
+                  <Badge
+                    key={`${company}-skills-badge-${skill}`}
+                    className="h-5"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
             </div>
           )}
         </AccordionContent>

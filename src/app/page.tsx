@@ -1,15 +1,17 @@
 import Image from "next/image";
 import { FloatingDock } from "~/components/floating-dock";
+import { ProjectExperienceCard } from "~/components/project-experience-card";
 import { Badge } from "~/components/ui/badge";
 import { WorkExperienceCard } from "~/components/work-experience-card";
 
 import { skills } from "~/data/skills";
 import { workExperiences } from "~/data/work-experiences";
+import { projects } from "~/data/projects";
 import { cn } from "~/lib/utils";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-items-center min-h-[100dvh] p-8 pb-20 gap-8 sm:p-20 max-w-5xl mx-auto ">
+    <div className="flex flex-col items-center justify-items-center min-h-[100dvh] p-6 pb-20 gap-8 max-w-5xl mx-auto ">
       {/* TOP SECTION */}
       <div className="flex justify-between gap-4 md:gap-8">
         <div className="flex flex-col gap-2">
@@ -24,7 +26,7 @@ export default function Home() {
         </div>
         <div className="grow-0 shrink-0">
           <Image
-            src={"/headshot.png"}
+            src={"/pfp-ghibli-square.png"}
             alt="Picture of Julian"
             width={125}
             height={125}
@@ -66,7 +68,7 @@ export default function Home() {
         <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
           Work Experience
         </h3>
-        <ul className="divide-y divide-solid ml-4">
+        <ul className="divide-y divide-solid ml-6">
           {workExperiences.map((experience, index) => {
             let shouldHideBorder = false;
 
@@ -90,6 +92,25 @@ export default function Home() {
             );
           })}
         </ul>
+      </div>
+
+      {/* PROJECTS */}
+      <div className="w-full flex flex-col gap-2" id="projects">
+        <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
+          Projects
+        </h3>
+        <p className="text-muted-foreground text-xl">
+          A curated collection of my favorite work—ranging from passion projects
+          to real-world solutions.
+        </p>
+        <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {projects.map((project) => (
+            <ProjectExperienceCard
+              key={`projects-card-${project.title}`}
+              {...project}
+            />
+          ))}
+        </div>
       </div>
       <FloatingDock />
     </div>
