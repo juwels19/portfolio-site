@@ -1,20 +1,22 @@
 export const workExperiences = [
   {
-    title: "Senior Software Engineer",
+    title: "Senior Software Engineer (Front-end)",
     company: "Scotiabank",
     companyImage: "./scotiabank.svg",
     startDate: "April 2024",
     endDate: "Present",
-    description: "This is a sample description.",
+    description:
+      "In this role I upgraded a core money movement flow, handling over 350 million transactions annually, into a Next.js micro-app with Server Side Rendering. I delivered multiple feature-complete projects aligned with the bank’s design system and Ally standards, supporting thousands of transactions or users daily. By implementing React Query, I improved load times by 30% and cut related bugs by 25%. I also contributed new UI components and enhanced existing ones within the bank’s internal design system. Additionally, I created proof-of-concepts for integrating Tailwind, Next.js app router, and SSR. I was also able to practice my mentoring skills by mentoring five new developers, helping them ramp up in just two weeks instead of a month.",
   },
   {
-    title: "Software Engineer",
+    title: "Software Engineer (Platform + Front-end)",
     company: "Scotiabank",
     isSequential: true,
     companyImage: "./scotiabank.svg",
     startDate: "June 2023",
     endDate: "April 2024",
-    description: "This is a sample description.",
+    description:
+      "I managed the health and reliability of a monorepo with over 10 Next.js micro-apps. I worked closely with the accessibility team to fix around 50 issues flagged by Ally and Google Lighthouse, and I helped reduce internal OWASP defects by 25%. Additionally, I stepped in to develop core banking features whenever other teams needed extra support. It was a great experience balancing maintenance with hands-on development.",
   },
   {
     title: "AI Backend Developer",
@@ -37,7 +39,7 @@ export const workExperiences = [
     skills: ["Python", "Pandas", "PowerBI"],
   },
   {
-    title: "Machine Learning and Application Developer",
+    title: "Front-End and Machine Learning Developer",
     company: "Stathletes",
     companyImage: "/stathletes.jpeg",
     startDate: "May 2021",
