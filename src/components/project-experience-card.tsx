@@ -20,7 +20,7 @@ export function ProjectExperienceCard({
   sourceCodeLink?: string;
 }) {
   return (
-    <Card className="pt-0 gap-2">
+    <Card className="pt-0 gap-2 shadow-md">
       <div className="min-h-40 max-h-60 relative aspect-16/9">
         <Image
           src={imageUrl}
@@ -29,10 +29,10 @@ export function ProjectExperienceCard({
           className="rounded-tl-xl rounded-tr-xl"
         />
       </div>
-      <div className="grow-1 px-4 flex flex-col gap-2">
+      <div className="grow-1 px-4 flex flex-col gap-4">
         <div className="grow-1">
           <CardTitle className="text-xl font-semibold">{title}</CardTitle>
-          <p className="text-sm">{description}</p>
+          <p className="text-sm pt-2">{description}</p>
         </div>
 
         <div className="flex flex-row gap-2 flex-wrap">
@@ -41,7 +41,7 @@ export function ProjectExperienceCard({
           ))}
         </div>
 
-        <div className="mt-2 flex gap-2 items-end">
+        <div className="mt-2 flex gap-3 items-end">
           {link && (
             <a href={link} className="cursor-pointer">
               <Badge

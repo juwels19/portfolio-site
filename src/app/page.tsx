@@ -11,7 +11,7 @@ import { cn } from "~/lib/utils";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-items-center min-h-[100dvh] p-6 pb-20 gap-8 max-w-5xl mx-auto ">
+    <div className="flex flex-col items-center justify-items-center min-h-[100dvh] p-6 pb-20 gap-8 max-w-6xl mx-auto ">
       {/* TOP SECTION */}
       <div className="flex justify-between gap-4 md:gap-8">
         <div className="flex flex-col gap-2">
@@ -56,7 +56,7 @@ export default function Home() {
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
           Skill Set
         </h2>
-        <div className="flex flex-row gap-2 flex-wrap">
+        <div className="flex flex-row gap-3 flex-wrap">
           {skills.map((skill) => (
             <Badge key={`skills-badge-${skill}`}>{skill}</Badge>
           ))}
@@ -103,7 +103,7 @@ export default function Home() {
           A curated collection of my favorite work—ranging from passion projects
           to real-world solutions.
         </p>
-        <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <ProjectExperienceCard
               key={`projects-card-${project.title}`}

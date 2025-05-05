@@ -33,7 +33,7 @@ export function WorkExperienceCard({
     <Accordion
       type="single"
       collapsible
-      className="pt-0 border-l border-dashed"
+      className="py-2 pt-0 border-l border-dashed"
     >
       <AccordionItem value={company}>
         <AccordionTrigger className="cursor-pointer hover:no-underline py-2">

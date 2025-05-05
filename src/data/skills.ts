@@ -13,8 +13,8 @@ export const skills = [
   "Drizzle",
   "Postgres",
   "Jest",
+  "CI/CD",
   "React Testing Library",
   "Playwright",
-  "CI/CD",
   "Git",
 ];
